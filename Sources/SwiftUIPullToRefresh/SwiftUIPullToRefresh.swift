@@ -94,9 +94,11 @@ public struct RefreshableScrollView<Content: View>: View {
             Rectangle()
               .foregroundColor(.gray.opacity(0.05))
               .frame(height: THRESHOLD)
-            ActivityIndicator(isAnimating: state == .loading) {
+            
+    
+            ActivityIndicatorView(isVisible: state == .loading, type: .gradient(.red)) {
               $0.hidesWhenStopped = false
-            }
+            }.frame(width: 50.0, height: 50.0)
           }.offset(y: (state == .loading) ? 0 : -THRESHOLD)
         }
       }
