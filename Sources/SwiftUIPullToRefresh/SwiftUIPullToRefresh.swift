@@ -97,9 +97,9 @@ public struct RefreshableScrollView<Content: View>: View {
               .frame(height: THRESHOLD)
             
     
-            ActivityIndicatorView(isVisible: state == .loading, type: .gradient(.red)) {
+            ActivityIndicator(isAnimating: state == .loading) {
               $0.hidesWhenStopped = false
-            }.frame(width: 50.0, height: 50.0)
+            }
           }.offset(y: (state == .loading) ? 0 : -THRESHOLD)
         }
       }
