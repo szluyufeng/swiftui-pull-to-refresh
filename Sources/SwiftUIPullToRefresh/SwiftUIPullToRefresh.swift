@@ -1,4 +1,5 @@
 import SwiftUI
+import ActivityIndicatorView
 
 // There are two type of positioning views - one that scrolls with the content,
 // and one that stays fixed
