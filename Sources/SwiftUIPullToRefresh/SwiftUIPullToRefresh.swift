@@ -92,7 +92,7 @@ public struct RefreshableScrollView<Content: View>: View {
           // The loading view. It's offset to the top of the content unless we're loading.
           ZStack {
             Rectangle()
-              // .foregroundColor(.gray.opacity(0.05))
+              .foregroundColor(Color.backgroundColor)
               .frame(height: THRESHOLD)
             
     
@@ -100,6 +100,7 @@ public struct RefreshableScrollView<Content: View>: View {
               $0.hidesWhenStopped = false
             }
           }.offset(y: (state == .loading) ? 0 : -THRESHOLD)
+            .foregroundColor(Color.backgroundColor)
         }
       }
       // Put a fixed PositionIndicator in the background so that we have
